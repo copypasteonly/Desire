@@ -1,0 +1,50 @@
+#!/bin/bash
+export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+
+#down the last running theme
+if [ -f "/tmp/leftwm-theme-down" ]; then
+    /tmp/leftwm-theme-down
+    rm /tmp/leftwm-theme-down
+fi
+ln -s ${SCRIPTPATH}/down /tmp/leftwm-theme-down
+
+
+#boot compton or picom if it exists
+if [ -x "$(command -v picom)" ]; then
+  picom &> /dev/null &
+fi
+
+#set the theme.toml config
+leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
+
+
+##set background
+#if [ -x "$(command -v feh)" ]; then
+#  #feh --bg-scale "${SCRIPTPATH}/background.png"
+#  feh --bg-scale "$(cat ~/.background)"
+#fi
+
+if [ -x "$(command -v feh)" ]; then
+  feh --bg-fill --randomize ~/Wallpapers/
+fi
+
+
+# extra utils to make this theme a little more homey
+if [ -x "$(command -v dunst)" ]; then
+  dunst -config ~/.config/dunst/dunstrc &
+fi
+
+# launch network-manager applet, but only if it's not already running
+if [ -x "$(command -v nm-applet)"]; then
+  ps aux | grep nm-applet | grep -v grep > /dev/null || nm-applet &
+fi
+
+
+#boot a polybar for each monitor
+cd ${SCRIPTPATH}/polybar
+polybar -m | sed s/:.*// | tac | while read -r monitor
+do
+  monitor=$monitor polybar -c config.ini main &> /tmp/polybar.log &
+done
+
