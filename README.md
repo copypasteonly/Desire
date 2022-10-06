@@ -11,7 +11,7 @@ This theme is a modified look of the [arch-one-dark](https://github.com/jamesbak
 * [polybar](https://wiki.archlinux.org/title/Polybar)
 * [feh](https://wiki.archlinux.org/title/feh)
 * Blex Mono Nerd Font
-* Codelia Font (Paid) // You can try to look for alternatives to suit your taste.
+* Feather font 
 
 ### :dart: Goals
 - [ ] Overhaul the colors to incorporate more rustic elements.
