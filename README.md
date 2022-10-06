@@ -14,9 +14,9 @@ This theme is a modified look of the [arch-one-dark](https://github.com/jamesbak
 * Codelia Font (Paid) // You can try to look for alternatives to suit your taste.
 
 ### :dart: Goals
-- [  ] Overhaul the colors to incorporate more rustic elements.
-- [  ] Remake the polybar to suit my liking and minimize space consumption.
-- [  ] Polishing
+- [ ] Overhaul the colors to incorporate more rustic elements.
+- [ ] Remake the polybar to suit my liking and minimize space consumption.
+- [ ] Polishing
 
 ### :copyright: Credits
 All wallpapers belong to their respective owners, they are not mine!
