@@ -15,11 +15,11 @@ if [ -x "$(command -v picom)" ]; then
 fi
 
 #set the theme.toml config
-leftwm-command "LoadTheme $SCRIPTPATH/theme.toml"
+leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
 #set background
 if [ -x "$(command -v feh)" ]; then
-  feh --bg-fill --randomize /wallpapers/
+  feh --bg-fill --randomize $SCRIPTPATH/wallpapers/
 fi
 
 # extra utils to make this theme a little more homey
@@ -28,7 +28,7 @@ if [ -x "$(command -v dunst)" ]; then
 fi
 
 #include desire.conf to kitty file, and make a symlink.
-ln -s kitty/desire.conf $HOME/.config/kitty
+ln -s $SCRIPTPATH/kitty/desire.conf $HOME/.config/kitty
 cd $HOME/.config/kitty
 echo "include ./desire.conf" >> kitty.conf
 
