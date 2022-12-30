@@ -10,12 +10,12 @@ This theme is a modified look of the [arch-one-dark](https://github.com/jamesbak
 * [dunst](https://wiki.archlinux.org/title/dunst)
 * [polybar](https://wiki.archlinux.org/title/Polybar)
 * [feh](https://wiki.archlinux.org/title/feh)
-* Blex Mono Nerd Font
-* Feather font 
+* Terminus Font
+* Waffle Font 
 
 ### :dart: Goals
 - [ ] Overhaul the colors to incorporate more rustic elements.
-- [ ] Remake the polybar to suit my liking and minimize space consumption.
+- [x] Remake the polybar to suit my liking and minimize space consumption.
 - [ ] Polishing
 
 ### :copyright: Credits
